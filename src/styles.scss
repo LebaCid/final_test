@@ -1,0 +1,368 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  overflow-x: clip;
+  margin: 0;
+  padding: 0;
+}
+
+// NAVBAR
+
+.services:hover>.dropdown-menu {
+  display: block;
+  margin-top: .125em;
+  top: 96px;
+}
+
+.navbar {
+  height: 100px;
+
+  .navbar-toggler {
+    width: 200px;
+    background-color: orange;
+  }
+
+  .navbar-toggler-icon {
+    color: white;
+  }
+}
+
+.rq-p {
+  background-color: orange;
+  border-radius: 20px;
+}
+
+// .fa {
+//   background-color: orange;
+//   border-radius: 50px;
+//   height: 30px;
+//   width: 30px;
+//   text-align: center;
+//   color: white;
+// }
+
+li a:hover {
+  color: orange !important;
+}
+
+// HOME SECTION
+
+.con {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+}
+
+.arrow-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.arr_right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.arr_right,
+.arr_left {
+  height: 2.5rem;
+  top: 50%;
+  z-index: 4;
+}
+
+.paragraph-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.paragraph-content {
+  text-align: center;
+}
+
+.slide-button {
+  z-index: 10;
+  background-color: rgb(245, 167, 20);
+  height: auto;
+  width: auto;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  white-space: nowrap;
+  min-height: 0px;
+  min-width: 0px;
+  max-height: none;
+  max-width: none;
+  text-align: center;
+  line-height: 56px;
+  letter-spacing: 0px;
+  font-weight: 500;
+  font-size: 20px;
+  padding-left: 44px;
+  border-radius: 25px;
+  padding-right: 44px;
+  backdrop-filter: none;
+  filter: none;
+  transform-origin: 50% 50%;
+  opacity: 1;
+  transform: translate(0px, 0px);
+  visibility: visible;
+  border-width: 0px;
+}
+
+.home-i1 {
+  width: 500px;
+  height: 455px;
+  object-fit: contain;
+}
+
+.home-i2 {
+  width: 547px;
+  height: 498px;
+  object-fit: contain;
+}
+
+.home-i3 {
+  width: 1024px;
+  height: 128px;
+  object-fit: contain;
+}
+
+.home-p-anim {
+  display: block;
+  // font-size: 2rem;
+  // font-weight: 700;
+  // letter-spacing: 1.75rem;
+  animation: moveToTop 1s ease-out;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes moveToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.i1-anim {
+  display: block;
+  animation: moveToLeft 1s ease-out;
+  // animation-duration: 3s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes moveToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.i2-anim {
+  display: block;
+  animation: moveToRight 1s ease-out;
+  // animation-duration: 3s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.item {
+  width: 263px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 30px;
+  background-color: #f5f5f5;
+}
+
+img {
+  height: 25vh;
+}
+
+// h6 {
+//   color: #383a3d;
+//   font-family: 'Fira Sans', sans-serif;
+//   font-size: 18px;
+//   line-height: 26px;
+//   font-style: normal;
+//   font-weight: 400;
+//   letter-spacing: 0px;
+//   text-transform: none;
+// }
+
+.qbutton {
+  color: #ffffff;
+  font-family: 'Fira Sans', sans-serif;
+  border-color: #f5a714;
+  font-size: 20px;
+  line-height: 60px;
+  height: 60px;
+  font-style: normal;
+  font-weight: 500;
+  background-color: #f5a714;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  letter-spacing: 0px;
+  text-transform: none;
+  border-width: 0px;
+  padding-left: 55px;
+  padding-right: 55px;
+  text-decoration: none;
+}
+
+.qbutton:hover {
+  color: white;
+  background-color: orangered;
+}
+
+.l-i-img {
+  width: 104px;
+  height: 104px;
+}
+
+.co {
+  height: 75vh;
+  width: 100%;
+  padding: 120px;
+}
+
+.clip-image {
+  clip-path: polygon(57% 14%, 100% 0, 100% 100%, 0% 100%);
+  // clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bg-info {
+  background-color: blue;
+}
+
+.bg-secondary {
+  background-color: gray;
+}
+
+.merge {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+
+
+// BORDER SHAPES
+
+.clip-art {
+  width: 100%;
+  height: 75vh;
+  clip-path: polygon(50% 0%, 100% 0, 100% 43%, 100% 75%, 100% 100%, 27% 78%, 0 100%, 0% 43%, 0 0);
+  background-color: aqua;
+}
+
+.clip-art-1 {
+  width: 100%;
+  height: 100vh;
+  clip-path: polygon(75% 23%, 100% 0, 100% 100%, 0 100%, 0 0);
+  background-color: skyblue;
+}
+
+.clip-art-2 {
+  clip-path: polygon(30% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
+  width: 100%;
+  height: 130vh;
+  background-color: pink;
+  padding: 150px;
+}
+
+.clip-art-3 {
+  clip-path: polygon(75% 100%, 100% 70%, 100% 0%, 0 0, 0 70%);
+  width: 100%;
+  height: 75vh;
+  background-color: pink;
+  padding: 100px;
+}
+
+
+
+
+
+
+.ABC {
+  width: 100%;
+  height: 100vh;
+  object-fit: contain;
+  clip-path: polygon(73% 33%, 100% 0, 100% 100%, 75% 100%, 25% 100%, 0 100%, 0 0);
+}
+
+.ABCD {
+  width: 120px;
+  height: 120px;
+}
+
+// SERVICES
+
+
+
+// INPUTS
+
+.input,
+.hs-input {
+  width: 458px;
+  height: 40px;
+  border: none;
+
+  .invalid {
+    width: 1024px;
+    height: 40px;
+  }
+
+  .is-placeholder {
+    width: 1024px;
+    height: 40px;
+  }
+
+  .hs-fieldtype-textarea {
+    width: 1024px;
+    height: 40px;
+  }
+}
+
+.sImg {
+  width: 26px;
+  height: 26px;
+  // padding: 5px;
+  margin: 5px;
+}

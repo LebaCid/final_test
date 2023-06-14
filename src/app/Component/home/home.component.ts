@@ -1,12 +1,16 @@
-import { Component, HostListener } from '@angular/core';
-import Swiper, { SwiperOptions } from 'swiper';
+import { AfterViewInit, Component, HostListener, OnDestroy, Renderer2 } from '@angular/core';
+import Swiper, { Autoplay } from 'swiper';
 
+Swiper.use([Autoplay]);
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit, OnDestroy {
+
+  constructor(private renderer: Renderer2) { }
+
   currIndex: number = 0;
 
   currentIndex: number = 0;
@@ -56,30 +60,83 @@ export class HomeComponent {
     }, 5000);
   }
 
+  @HostListener('window:resize', [])
+  onWindowResize() {
+    this.setResponsiveImageClass();
+  }
+
+  setResponsiveImageClass() {
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth < 768) {
+      this.renderer.addClass(document.querySelector('.responsive-image'), 'small-screen-image');
+      this.renderer.removeClass(document.querySelector('.responsive-image'), 'large-screen-image');
+    } else {
+      this.renderer.addClass(document.querySelector('.responsive-image'), 'large-screen-image');
+      this.renderer.removeClass(document.querySelector('.responsive-image'), 'small-screen-image');
+    }
+  }
+
+  isSmallScreen(): boolean {
+    return window.innerWidth < 768; // Adjust the breakpoint according to your needs
+  }
+
+  isLargeScreen(): boolean {
+    return window.innerWidth >= 1024; // Adjust the breakpoint according to your needs
+  }
+
   //SWIPER
 
-  private swiper: Swiper | undefined;
+  private swiperInstance: Swiper | null = null;
 
   ngAfterViewInit() {
-    this.swiper = new Swiper('.swiper-container', this.getSwiperOptions());
+    this.swiperInstance = new Swiper('.swiper-container', {
+      slidesPerView: 4,
+      direction: 'horizontal',
+      loop: true,
+      autoplay: {
+        delay: 5000, // Time between slides (5 seconds)
+      },
+    });
   }
 
-  private getSwiperOptions(): SwiperOptions {
-    return {
-      // Add your configuration options here
-      slidesPerView: 4,
-      spaceBetween: 0,
-      loop: true,
-      keyboard: true,
-      mousewheel: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    };
+  ngOnDestroy() {
+    if (this.swiperInstance) {
+      this.swiperInstance.destroy();
+    }
+  }
+
+  //IMAGE SLIDER
+  images = [
+    { src: 'https://www.ignitesocialmedia.com/wp-content/uploads/2021/10/home-gallery.jpg', alt: 'Image 1' },
+    { src: 'https://www.ignitesocialmedia.com/wp-content/uploads/2021/10/home-gallery1.jpg', alt: 'Image 2' },
+    { src: 'https://www.ignitesocialmedia.com/wp-content/uploads/2021/10/home-gallery2.jpg', alt: 'Image 3' },
+    { src: 'https://www.ignitesocialmedia.com/wp-content/uploads/2021/10/82448667_1766205996848026_8278347793575965953_n.jpg', alt: 'Image 4' },
+    { src: 'https://www.ignitesocialmedia.com/wp-content/uploads/2021/10/95316265_532571454319089_2244526092926431294_n.jpg', alt: 'Image 5' }
+  ];
+
+  selectedImage: any;
+
+  openImage(image: any) {
+    this.selectedImage = image;
+  }
+
+  showPreviousImage() {
+    const currentIndex = this.images.indexOf(this.selectedImage);
+    const previousIndex = (currentIndex - 1 + this.images.length) % this.images.length;
+    this.selectedImage = this.images[previousIndex];
+  }
+
+  showNextImage() {
+    const currentIndex = this.images.indexOf(this.selectedImage);
+    const nextIndex = (currentIndex + 1) % this.images.length;
+    this.selectedImage = this.images[nextIndex];
+  }
+
+  closeModal() {
+    this.selectedImage = null;
   }
 }
-
 
 
 // slidesPerView: 3

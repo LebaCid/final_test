@@ -128,20 +128,59 @@
 <div class="clip-art-1 d-flex justify-content-center align-items-center">
   <div class="text-center">
     <div class="container">
-      <h3>What Our Clients Have to Say</h3>
-      <p style="font-size:18px;color:#FFFFFF;">The team at Ignite is truly remarkable, which is something not often said
-        about agencies. We work with a fantastic team that is extremely collaborative and consistently brings fresh
-        ideas to the table on how we can continue to spread our mission through social. Not only are their ideas
-        creative and flawlessly executed but they also have a true technical understanding of the various social
-        channels and have become an extension of our brand. They’re truly dedicated to our success.
-      </p>
-      <p class="testimonial_author" style="color: #FFFFFF;font-weight: 400;color: #F5A714;font-size: 16px;">American
-        Heart Association, Go Red for Women
-      </p>
-      <ul class="flex-direction-nav">
-        <img class="arr_left-1" src="../../../assets/images/arrow_Left.png" type="button">
-        <img class="arr_right-1" src="../../../assets/images/arr_right.png" type="button">
-      </ul>
+      <div class="row">
+        <div class="col text-center">
+          <br><br><br><br><br><br><br>
+          <h3>What Our Clients Have to Say</h3>
+        </div>
+      </div>
+      <div class="row my-5">
+        <div class="col text-center">
+          <ng-container *ngIf="currentIndex === 0">
+            <p class="text-white" style="font-size:18px;color:#FFFFFF;">The Outer Banks Visitors Bureau has been working
+              with Ignite Social Media for more than two years. They ramped up on our business quickly and internalized
+              what they learned. We’ve benefited immensely from their expertise and the passion they bring to the job.
+              Perhaps most importantly, they’re just good people. I truly do consider Ignite to be a part of our team. I
+              would recommend them without any hesitation.
+            </p>
+            <p class="text-secondary" style="color: #FFFFFF;font-weight: 400;color: #F5A714;font-size: 16px;">The Outer
+              Banks Visitors Bureau
+            </p>
+          </ng-container>
+          <ng-container *ngIf="currentIndex === 1">
+            <p class="text-white" style="font-size:18px;color:#FFFFFF;">The team at Ignite is truly remarkable, which is
+              something not often said about agencies. We work with a fantastic team that is extremely collaborative and
+              consistently brings fresh ideas to the table on how we can continue to spread our mission through social.
+              Not only are their ideas creative and flawlessly executed but they also have a true technical
+              understanding
+              of the various social channels and have become an extension of our brand. They’re truly dedicated to our
+              success.</p>
+            <p class="text-secondary" style="color: #FFFFFF;font-weight: 400;color: #F5A714;font-size: 16px;"> American
+              Heart Association, Go Red for Women</p>
+          </ng-container>
+          <ng-container *ngIf="currentIndex === 2">
+            <p class="text-white" style="font-size:18px;color:#FFFFFF;">I can’t imagine a better partner to manage our
+              social media presence than the team at Ignite Social Media. Since they’ve taken over our account our fan
+              base and engagement rates have grown every quarter. They consistently produce high-quality, content that
+              our
+              customers love and do a tremendous job managing our community of fans. The reports I get back are
+              interesting and insightful and their expertise at managing our paid media has allowed us to do more
+              testing
+              and learning than we ever could have on our own. They’re a team that I truly trust to help shepherd us
+              through the ever-changing social media landscape.</p>
+            <p class="text-secondary" style="color: #FFFFFF;font-weight: 400;color: #F5A714;font-size: 16px;"> Aaron
+              Kohlhoff, Senior Digital Marketing Manager</p>
+          </ng-container>
+        </div>
+      </div>
+      <div class="row my-5">
+        <div class="col text-center">
+          <div class="arrows">
+            <img class="sImg" src="../../../assets/Images/arrow_Left.png" (click)="previousPara()" type="button">
+            <img class="sImg" src="../../../assets/Images/arr_right.png" (click)="nextPara()" type="button">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

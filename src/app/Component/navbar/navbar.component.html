@@ -12,33 +12,35 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{'show': !isNavbarCollapsed}">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
         <li class="nav-item">
-          <a routerLink="home" routerLinkActive="active" class="nav-link active" aria-current="page" href="#">Home</a>
+          <a  [routerLink]="['home']" [routerLinkActive]="['active']" aria-current="page" href="#">Home</a>
         </li>
 
         <li class="nav-item">
-          <a routerLink="about" routerLinkActive="active" class="nav-link active" aria-current="page" href="#">About</a>
+          <a [routerLink]="['about']" [routerLinkActive]="['active']"  aria-current="page" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a routerLink="clients" routerLinkActive="active" class="nav-link active" aria-current="page"
+          <a [routerLink]="['clients']" [routerLinkActive]="['active']"  aria-current="page"
             href="#">Clients</a>
         </li>
         <li class="nav-item">
 
-          <a routerLink="services" routerLinkActive="active" class="nav-link active" aria-current="page"
+          <a [routerLink]="['services']" [routerLinkActive]="['active']"  aria-current="page"
             href="#">Services</a>
         </li>
 
         <li class="nav-item">
-          <a routerLink="case-studies" routerLinkActive="active" class="nav-link active" aria-current="page"
+          <a [routerLink]="['case-studies']" [routerLinkActive]="['active']"  aria-current="page"
             href="#">Case Studies</a>
         </li>
         <li class="nav-item">
-          <a routerLink="blog" routerLinkActive="active" class="nav-link active" aria-current="page" href="#">Blog</a>
+          <a [routerLink]="['blog']" [routerLinkActive]="['active']"  aria-current="page" href="#">Blog</a>
         </li>
-        <li class="nav-item">
-          <a routerLink="request-proposal" routerLinkActive="active" class="nav-link active rq-p" aria-current="page"
-            href="#">Request a proposal</a>
-        </li>
+        <button class="rq-p">
+          <li>
+            <a [routerLink]="['request-proposal']" class="nohover" aria-current="page"
+              href="#">Request a proposal</a>
+          </li>
+        </button>
       </ul>
     </div>
   </div>
